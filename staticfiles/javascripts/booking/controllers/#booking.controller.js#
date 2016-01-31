@@ -1,0 +1,17 @@
+(function(){
+	'use strict';
+	angular
+		.module('app.booking.controllers')
+		.controller('BookingController', BookingController);
+	BookingController.$inject = ['$scope'];
+	function BookingController($scope){
+		var vm =this;
+		activate();
+		function activate(){
+			
+	//		$scope.$watchCollection(function (){ return $scope.posts; }, render);
+	//		$scope.$watch( function(){ return $(window).width(); }, render);
+		}
+
+				}
+	})()

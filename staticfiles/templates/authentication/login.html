@@ -1,0 +1,33 @@
+<div id="login" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modal-login">Login</h2>
+  <div class="row">
+	<div class="large-4 medium-4 small-12 columns auth-plain">
+      <div class="signup-panel left-solid">
+		<form role="form" ng-submit="vm.login()">
+          <div class="row collapse">
+			<div class="small-2  columns">
+              <span class="prefix"><i class="fi-torso-female"></i></span>
+			</div>
+			<div class="small-10  columns">
+              <input type="email" placeholder="Email" ng-model="vm.email">
+			</div>
+          </div>
+          <div class="row collapse">
+			<div class="small-2 columns ">
+              <span class="prefix"><i class="fi-lock"></i></span>
+			</div>
+			<div class="small-10 columns ">
+              <input type="password" ng-model="vm.password" placeholder="password">
+			</div>
+          </div>
+		  <button type="submit" class="button success">Log In
+		  </button>
+		</form>
+	  </div>
+	</div>
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+<script>
+    $(document).foundation();
+</script>

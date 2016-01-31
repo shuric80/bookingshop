@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<nav class="top-bar" data-topbar role="navigation" ng-controller="NavbarController as vm">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">My Site</a></h1>
+    </li>
+    <li class="has-form">
+      <div class="row collapse">
+        <div class="large-8 small-9 columns">
+          <input type="text" placeholder="Find Stuff">
+        </div>
+        <div class="large-4 small-3 columns">
+          <a href="#" class="alert button expand">Search</a>
+        </div>
+      </div>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+	  {% if user.is_authenticated %}
+      <li><a href="/+{{ user.username }}">+{{ user.username }}</a></li>
+      <li><a href="/+{{ user.username }}/settings">settings</a></li>
+	  <li> <a class="button round" id="button-create-new-posts"
+			  href="javascript:void(0)"
+			  ng-dialog="/static/templates/post/new-post.html"
+			  ng-dialog-controller="NewPostController as vm">new post</a></li>
+      <li><a href="javascript:void(0)" ng-click="vm.logout()">Logout</a></li>
+      {% else %}
+	  <li><a href="/login" data-reveal-ajaх="true" data-reveal-id="login">Login</a></li>
+      <li><a href="/register"data-reveal-ajaх="true" data-reveal-id="register">Register</a></li>
+      {% endif %}
+    </ul>
+  </section>
+</nav>
+<script>
+  $(document).foundation();
+</script>

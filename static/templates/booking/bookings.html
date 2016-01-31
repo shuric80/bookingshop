@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="large-4 medium-4 small-12 columns">
+	<h4>Day</h4>
+	<div class="row">
+	  <div class="bookings">
+		<div class="small-9 small-centered columns">
+		  <ul class="button-group round toggle" data-toggle="buttons-radio">
+			<div ng-repeat="book in booking.times track by $index">
+			  <li>
+				<input type="radio" ng-model="booking.times[$index]"
+					   id="{{ $index }}" name="r-group" data-toggle="button">
+				<label class="button" for="{{ $index }}">{{ booking.times[$index] }}</label>
+			  </li>
+			</div>
+		  </ul>
+		</div>
+	  </div>
+	</div>
+  </div>
+</div>
